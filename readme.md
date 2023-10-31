@@ -1,8 +1,10 @@
 # Rogue Sharks
-
-### Contains the art upgrade protocol, sdk, and xnft
-
-
-<p align="center">
-    <img src="/xnft/public/assets/re-smol.gif" width="300" height="500"/>
+<p align="right">
+    <img src="/xnft/public/assets/re-smol.gif" width="200" height="400"/>
 </p>
+
+## Xnft
+
+## Program (Art Upgrades)
+
+## SDK (Art Upgrades)
