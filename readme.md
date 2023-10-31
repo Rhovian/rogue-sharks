@@ -6,8 +6,10 @@ and finally a public sdk interface for the art upgrades protocol.
 <br clear="left"/>
 
 
-## Xnft
+## Documentation
 
-## Program (Art Upgrades)
+### Xnft
 
-## SDK (Art Upgrades)
+### Program (Art Upgrades)
+
+### SDK (Art Upgrades)
