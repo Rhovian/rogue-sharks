@@ -1,4 +1,4 @@
-<img src="/xnft/public/assets/re-smol.gif" align="left" width="200" height="300"/>
+<img src="/xnft/public/assets/re-smol.gif" align="right" width="200" height="300"/>
 Rogue sharks monorepo containing the art upgrades protocol using the anchor framework,
 an xnft built with React and Web.GL for rendering the runner game,
 and finally a public sdk interface for the art upgrades protocol.
