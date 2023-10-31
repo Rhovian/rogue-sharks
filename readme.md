@@ -1,1 +1,1 @@
-![Hello Shark](./xnft/public/re-smol.gif)
+![Hello Shark](./xnft/public/assets/re-smol.gif)
