@@ -1,1 +1,1 @@
-![Hello Shark](./xnft/public/assets/re-smol.gif)
+<img src="/xnft/public/assets/re-smol.gif" width="200" height="400" />
