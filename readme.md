@@ -1,9 +1,7 @@
-<div>
-    <h1>Rogue Sharks</h1>
-    <p align="right">
-        <img src="/xnft/public/assets/re-smol.gif" width="200" height="300"/>
-    </p>
-</div>
+<img src="/xnft/public/assets/re-smol.gif" align="left" width="200" height="300"/>
+some text aligned to the right of the image
+<br clear="left"/>
+
 
 ## Xnft
 
