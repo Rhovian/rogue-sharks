@@ -1,1 +1,1 @@
-![Hello Shark](./assets/rebirth-experience.mov)
+![Hello Shark](./xnft/public/re-smol.gif)
