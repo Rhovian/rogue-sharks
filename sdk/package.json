@@ -6,6 +6,10 @@
   "types": "dist/index.d.ts",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "build": "tsc",
+    "create:config": "ts-node createUpgradeConfig.ts"
+  },
   "dependencies": {
     "@coral-xyz/anchor": "^0.28.1-beta.1",
     "@metaplex-foundation/js": "^0.19.4",

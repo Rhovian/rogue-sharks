@@ -1,40 +1,40 @@
 Arguments: 
-  /usr/local/bin/node /Users/elo/.yarn/bin/yarn.js publish
+  /Users/elo/.nvm/versions/node/v20.8.1/bin/node /Users/elo/.yarn/bin/yarn.js create:config
 
 PATH: 
-  /Users/elo/google-cloud-sdk/bin:/Users/elo/.asdf/shims:/usr/local/opt/asdf/libexec/bin:/Users/elo/.local/bin:/Users/elo/.yarn/bin:/Users/elo/.config/yarn/global/node_modules/.bin:/Users/elo/.poetry/bin:/Users/elo/.local/share/solana/install/active_release/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/elo/.local/share/solana/install/active_release/bin:$PATH:/usr/local/go/bin:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/elo/google-cloud-sdk/bin:/Users/elo/.local/bin:/Users/elo/.yarn/bin:/Users/elo/.config/yarn/global/node_modules/.bin:/Users/elo/.poetry/bin:/opt/local/bin:/opt/local/sbin:/Users/elo/google-cloud-sdk/bin:/Users/elo/.local/bin:/Users/elo/.yarn/bin:/Users/elo/.config/yarn/global/node_modules/.bin:/Users/elo/.poetry/bin:/Users/elo/.local/share/solana/install/active_release/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/elo/.local/share/solana/install/active_release/bin:$PATH:/usr/local/go/bin:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/elo/.cargo/bin:/Users/elo/.foundry/bin:/Users/elo/.avm/bin/anchor-0.27.0:/Users/elo/.cargo/bin:/Users/elo/.foundry/bin:/Users/elo/.avm/bin/anchor-0.27.0:/Users/elo/.foundry/bin:/Users/elo/.avm/bin/anchor-0.27.0
+  /Users/elo/.nvm/versions/node/v20.8.1/bin:/Users/elo/google-cloud-sdk/bin:/Users/elo/.asdf/shims:/usr/local/opt/asdf/libexec/bin:/Users/elo/.local/bin:/Users/elo/.yarn/bin:/Users/elo/.config/yarn/global/node_modules/.bin:/Users/elo/.poetry/bin:/Users/elo/.local/share/solana/install/active_release/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/elo/.local/share/solana/install/active_release/bin:$PATH:/usr/local/go/bin:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/elo/.nvm/versions/node/v20.8.1/bin:/Users/elo/google-cloud-sdk/bin:/Users/elo/.local/bin:/Users/elo/.yarn/bin:/Users/elo/.config/yarn/global/node_modules/.bin:/Users/elo/.poetry/bin:/opt/local/bin:/opt/local/sbin:/Users/elo/.nvm/versions/node/v20.8.1/bin:/Users/elo/google-cloud-sdk/bin:/Users/elo/.local/bin:/Users/elo/.yarn/bin:/Users/elo/.config/yarn/global/node_modules/.bin:/Users/elo/.poetry/bin:/Users/elo/.local/share/solana/install/active_release/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/elo/.local/share/solana/install/active_release/bin:$PATH:/usr/local/go/bin:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/elo/.cargo/bin:/Users/elo/.foundry/bin:/Users/elo/.avm/bin/anchor-0.27.0:/Users/elo/.cargo/bin:/Users/elo/.foundry/bin:/Users/elo/.avm/bin/anchor-0.27.0:/Users/elo/.foundry/bin:/Users/elo/.avm/bin/anchor-0.27.0
 
 Yarn version: 
   1.22.19
 
 Node version: 
-  16.20.1
+  20.8.1
 
 Platform: 
   darwin x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/-/user/org.couchdb.user:mjavala: failed to authenticate: Could not authenticate mjavala: bad password
-      at Request.params.callback [as _callback] (/Users/elo/.yarn/lib/cli.js:66145:18)
-      at Request.self.callback (/Users/elo/.yarn/lib/cli.js:140890:22)
-      at Request.emit (node:events:513:28)
-      at Request.<anonymous> (/Users/elo/.yarn/lib/cli.js:141862:10)
-      at Request.emit (node:events:513:28)
-      at IncomingMessage.<anonymous> (/Users/elo/.yarn/lib/cli.js:141784:12)
-      at Object.onceWrapper (node:events:627:28)
-      at IncomingMessage.emit (node:events:525:35)
-      at endReadableNT (node:internal/streams/readable:1358:12)
-      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+  SyntaxError: /Users/elo/Code/solana/rogue-sharks/sdk/package.json: Expected double-quoted property name in JSON at position 317
+      at JSON.parse (<anonymous>)
+      at /Users/elo/.yarn/lib/cli.js:1629:59
+      at Generator.next (<anonymous>)
+      at step (/Users/elo/.yarn/lib/cli.js:310:30)
+      at /Users/elo/.yarn/lib/cli.js:321:13
 
 npm manifest: 
   {
     "name": "rogue-sharks-sdk",
-    "version": "1.0.5",
+    "version": "1.0.7",
     "description": "SDK for atomic art upgrades for rogue sharks xnft",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "license": "MIT",
     "private": false,
+    "scripts": {
+      "build": "tsc",
+      "create:config": "ts-node createUpgradeConfig.ts"
+    },
+    },
     "dependencies": {
       "@coral-xyz/anchor": "^0.28.1-beta.1",
       "@metaplex-foundation/js": "^0.19.4",

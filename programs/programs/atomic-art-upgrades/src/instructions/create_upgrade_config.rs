@@ -37,7 +37,7 @@ pub fn create_upgrade_config_handler(ctx: Context<CreateUpgradeConfig>, config: 
         config.base_uri,
         config.update_authority,
         config.collection_mint,
-        *ctx.bumps.get("upgrade_config").unwrap(),
+        ctx.bumps.upgrade_config,
     )?;
 
     Ok(())

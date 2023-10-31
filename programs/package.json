@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "createConfig": "cd packages/scripts && ts-node createUpgradeConfig.ts",
+    "create:config": "cd packages/scripts && ts-node createUpgradeConfig.ts",
     "lint:fix": "prettier */*.js \"*/**/*{.js,.ts}\" -w",
     "lint": "prettier */*.js \"*/**/*{.js,.ts}\" --check"
   },
