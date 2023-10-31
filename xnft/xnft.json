@@ -1,0 +1,13 @@
+{
+    "version": "0.0.1",
+    "storage": "aws",
+    "kind": "collectible",
+    "collectibleMint": "FREP9swLijQRyFXyrJTP8AB4ucx1iFP5jr4b3N1zRx52",
+    "tag": "nfts",
+    "contact":  "github.com/mjavala",
+    "entrypoints": {
+      "default": {
+        "web": "./web-build/index.html"
+      }
+    }
+  }
