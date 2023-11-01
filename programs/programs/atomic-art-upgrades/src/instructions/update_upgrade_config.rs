@@ -1,8 +1,7 @@
+use crate::error::CustomError;
+use crate::state::{UpdateUpgradeConfigParams, UpgradeConfig, MAX_BASE_URI_LEN};
 use anchor_lang::prelude::*;
 use anchor_spl::token::Mint;
-use crate::error::CustomError;
-use crate::state::{UpgradeConfig, UpdateUpgradeConfigParams, MAX_BASE_URI_LEN};
-
 
 #[derive(Accounts)]
 pub struct UpdateUpgradeConfig<'info> {
@@ -21,7 +20,10 @@ pub struct UpdateUpgradeConfig<'info> {
     pub collection_mint: Account<'info, Mint>,
 }
 
-pub fn update_upgrade_config_handler(ctx: Context<UpdateUpgradeConfig>, config: UpdateUpgradeConfigParams) -> Result<()> {
+pub fn update_upgrade_config_handler(
+    ctx: Context<UpdateUpgradeConfig>,
+    config: UpdateUpgradeConfigParams,
+) -> Result<()> {
     // Check the length of the metadata uri provided.
     require!(
         config.base_uri.len() <= MAX_BASE_URI_LEN,
@@ -34,7 +36,6 @@ pub fn update_upgrade_config_handler(ctx: Context<UpdateUpgradeConfig>, config: 
         ctx.accounts.payer.key() == upgrade_config.update_authority,
         CustomError::PayerMustBeUpdateAuthority,
     );
-
 
     upgrade_config.base_uri = config.base_uri;
     upgrade_config.update_authority = config.update_authority;

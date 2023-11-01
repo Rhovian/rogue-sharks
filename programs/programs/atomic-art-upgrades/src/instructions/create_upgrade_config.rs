@@ -1,8 +1,7 @@
+use crate::error::CustomError;
+use crate::state::{CreateUpgradeConfigParams, UpgradeConfig, MAX_BASE_URI_LEN};
 use anchor_lang::prelude::*;
 use anchor_spl::token::Mint;
-use crate::error::CustomError;
-use crate::state::{UpgradeConfig, CreateUpgradeConfigParams, MAX_BASE_URI_LEN};
-
 
 #[derive(Accounts)]
 pub struct CreateUpgradeConfig<'info> {
@@ -24,7 +23,10 @@ pub struct CreateUpgradeConfig<'info> {
     pub system_program: Program<'info, System>,
 }
 
-pub fn create_upgrade_config_handler(ctx: Context<CreateUpgradeConfig>, config: CreateUpgradeConfigParams) -> Result<()> {
+pub fn create_upgrade_config_handler(
+    ctx: Context<CreateUpgradeConfig>,
+    config: CreateUpgradeConfigParams,
+) -> Result<()> {
     // Check the length of the metadata uri provided.
     require!(
         config.base_uri.len() <= MAX_BASE_URI_LEN,
@@ -32,7 +34,7 @@ pub fn create_upgrade_config_handler(ctx: Context<CreateUpgradeConfig>, config: 
     );
 
     let upgrade_config = &mut ctx.accounts.upgrade_config;
-    
+
     **upgrade_config = UpgradeConfig::try_new(
         config.base_uri,
         config.update_authority,
@@ -41,5 +43,4 @@ pub fn create_upgrade_config_handler(ctx: Context<CreateUpgradeConfig>, config: 
     )?;
 
     Ok(())
-
 }

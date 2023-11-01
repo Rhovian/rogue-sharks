@@ -1,5 +1,4 @@
 use anchor_lang::prelude::*;
-use mpl_token_metadata::state::MAX_URI_LENGTH;
 
 #[account]
 pub struct UpgradeConfig {
@@ -14,12 +13,14 @@ pub struct UpgradeConfig {
 }
 
 impl UpgradeConfig {
-    pub const LEN: usize = 8 +
-        (32 * 2)
-        + (4 + MAX_URI_LENGTH)
-        + 1;
+    pub const LEN: usize = 8 + (32 * 2) + (4 + 200) + 1;
 
-    pub fn try_new(base_uri: String, update_authority: Pubkey, collection_mint: Pubkey, bump: u8) -> anchor_lang::Result<Self> {
+    pub fn try_new(
+        base_uri: String,
+        update_authority: Pubkey,
+        collection_mint: Pubkey,
+        bump: u8,
+    ) -> anchor_lang::Result<Self> {
         Ok(Self {
             update_authority,
             collection_mint,
@@ -32,7 +33,7 @@ impl UpgradeConfig {
         [
             "upgrade_config".as_bytes(),
             self.collection_mint.as_ref(),
-            &self.bump
+            &self.bump,
         ]
     }
 }

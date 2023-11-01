@@ -114,7 +114,7 @@ export type AtomicArtUpgrades = {
         },
         {
           "name": "mint",
-          "isMut": true,
+          "isMut": false,
           "isSigner": false
         },
         {
@@ -360,7 +360,7 @@ export const IDL: AtomicArtUpgrades = {
         },
         {
           "name": "mint",
-          "isMut": true,
+          "isMut": false,
           "isSigner": false
         },
         {

@@ -13,8 +13,8 @@ atomic_art_upgrades = "8EidSNJMiPUWcB8pXLnBG2k6nL4nqWwutPL5To5yY8Hh"
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "devnet"
-wallet = "~/.config/solana/devnet.json"
+cluster = "localnet"
+wallet = "/Users/elo/Code/solana/rogue-sharks/programs/packages/tests/fixtures/id.json"
 
 [scripts]
 test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 packages/tests/*.ts"

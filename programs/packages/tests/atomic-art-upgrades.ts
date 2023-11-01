@@ -271,30 +271,18 @@ describe("atomic-art-upgrades", () => {
       upgradeConfigAddress.toBase58()
     );
 
-    const tx = await AtomicArtUpgradesClient.buildUpgradeMetadataTransaction(
-      program.provider.connection, 
-      authority.publicKey, // Authority wallet
-      nft.address, 
-      mint,
-      nft.metadataAddress
-    )
-
-    const sendTransaction = async (transaction, connection) => {    
-      try {
-        const wallet = new NodeWallet(authority);
-        const signedTx = await wallet.signTransaction(transaction);
-    
-        await connection.sendRawTransaction(signedTx.serialize());
-      } catch (e) {
-        console.log(e);
-      }
+    try {
+      await AtomicArtUpgradesClient.upgradeMetadata(
+        mint,
+        nft.address,
+        nft.metadataAddress
+      );
+    } catch (error) {
+      const e = error as anchor.AnchorError;
+      expect(e.error.errorCode.code).to.equal("InvalidMetadataAccount");
     }
 
-    await sendTransaction(tx, program.provider.connection)  
-
-
     updatedNft = await metaplex.nfts().refresh(nft);
-
     const upgradeConfig = await program.account.upgradeConfig.fetch(
       client.upgradeConfigAddress
     );
