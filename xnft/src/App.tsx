@@ -11,7 +11,6 @@ import { TOKEN_METADATA_PROGRAM_ID } from '@coral-xyz/xnft';
 import { AnchorProvider } from '@coral-xyz/anchor';
 import { useLocation } from 'react-router-dom';
 
-
 const COLLECTION_MINT = new PublicKey('FREP9swLijQRyFXyrJTP8AB4ucx1iFP5jr4b3N1zRx52')
 
 function App() {
@@ -87,10 +86,6 @@ function App() {
     }
   }
 
-  const handleResize = () => {
-    window.xnft.popout( { fullscreen: true } );
-  };
-
   const extractMint = () => {
     const url = location.pathname;
     const parts = url.split('/');
@@ -100,33 +95,22 @@ function App() {
   }
 
   const renderContent = () => {
-    if (belowThreshold) {
-      return (
-        <div className='full-screen flex-center'>
-          <button className='upgrade-button' onClick={handleResize}>
-            Resize Component
-          </button>
-        </div>
-      );
-    } else {
-      return (
-        <div className="App full-screen flex-center flex-col">
-          {loading ? (
-            <div className='flex-center full-screen'>
-              <ReactLoading type='spin' color='red' />
-            </div>
-          ) : (
-            <>
-              <Unity unityProvider={unityProvider} style={{ width: 800, height: 600 }}/>
-              <p style={{ visibility: isLoaded ? "hidden" : "visible", color: "white" }}>Loading Application... {Math.round(loadingProgression * 100)}%</p>
-              <button className="upgrade-button" onClick={() => handleSkip()}>Skip Game & Upgrade</button>
-            </>
-          )}
-        </div>
-      );
-    }
+    return (
+      <div className="App full-screen flex-center flex-col">
+        {loading ? (
+          <div className='flex-center full-screen'>
+            <ReactLoading type='spin' color='red' />
+          </div>
+        ) : (
+          <>
+            <Unity unityProvider={unityProvider} style={{ width: 800, height: 600 }}/>
+            <p style={{ visibility: isLoaded ? "hidden" : "visible", color: "white" }}>Loading Application... {Math.round(loadingProgression * 100)}%</p>
+            <button className="upgrade-button" onClick={() => handleSkip()}>Skip Game & Upgrade</button>
+          </>
+        )}
+      </div>
+    );
   };
-
   return renderContent();
 }
 

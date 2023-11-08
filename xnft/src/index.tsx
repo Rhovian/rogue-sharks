@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Buffer } from 'buffer';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 window.Buffer = Buffer;
 
@@ -12,7 +13,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <App /> 
+    </Router>
   </React.StrictMode>
 );
 

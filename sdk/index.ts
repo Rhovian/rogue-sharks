@@ -5,7 +5,7 @@ import { AtomicArtUpgrades, IDL } from "./types/atomic_art_upgrades";
 import NodeWallet from "@coral-xyz/anchor/dist/cjs/nodewallet";
 
 export const PROGRAM_ID = new PublicKey(
-  "8EidSNJMiPUWcB8pXLnBG2k6nL4nqWwutPL5To5yY8Hh"
+  "JCp7WqJMX5qQucBkChrem5JZFjJxN12dmxvJGqNp724C"
 );
 
 export const METADATA_PROGRAM_ID = new PublicKey(
@@ -84,7 +84,9 @@ export class AtomicArtUpgradesClient {
     collectionMint: PublicKey,
     baseUri: string
   ): Promise<AtomicArtUpgradesClient> {
+    console.log(setUpAnchor())
     const client = new AtomicArtUpgradesClient(setUpAnchor());
+
     const upgradeConfigAddress =
       await AtomicArtUpgradesClient.getUpgradeConfigAddress(collectionMint);
 

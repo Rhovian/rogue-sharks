@@ -1,5 +1,5 @@
 [package]
-name = "atomic-art-upgrades"
+name = "atomic_art_upgrades"
 version = "0.1.0"
 description = "Created with Anchor"
 edition = "2021"
@@ -18,7 +18,5 @@ default = []
 [dependencies]
 anchor-lang = { version = "^0.29.0", features = ["init-if-needed"] }
 anchor-spl = "0.29.0"
-solana-program = "1.16.18"
+solana-program = "1.17.4"
 mpl-token-metadata = "3.1.0"
-solana-security-txt = "1.1.1"
-

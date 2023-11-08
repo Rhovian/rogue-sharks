@@ -1,6 +1,6 @@
 {
   "name": "rogue-sharks-sdk",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "SDK for atomic art upgrades for rogue sharks xnft",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

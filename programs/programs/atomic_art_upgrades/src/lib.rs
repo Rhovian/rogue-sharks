@@ -12,7 +12,7 @@ use instructions::*;
 
 mod seeds;
 
-declare_id!("8EidSNJMiPUWcB8pXLnBG2k6nL4nqWwutPL5To5yY8Hh");
+declare_id!("JCp7WqJMX5qQucBkChrem5JZFjJxN12dmxvJGqNp724C");
 
 #[program]
 pub mod atomic_art_upgrades {

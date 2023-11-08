@@ -7,7 +7,7 @@ import NodeWallet from "@coral-xyz/anchor/dist/cjs/nodewallet";
 const upgradeMetadataDescriminator = [107, 186, 204, 157, 166, 203, 110, 96];
 
 export const PROGRAM_ID = new PublicKey(
-  "8EidSNJMiPUWcB8pXLnBG2k6nL4nqWwutPL5To5yY8Hh"
+  "JCp7WqJMX5qQucBkChrem5JZFjJxN12dmxvJGqNp724C"
 );
 
 export const METADATA_PROGRAM_ID = new PublicKey(
