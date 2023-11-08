@@ -19,8 +19,8 @@ atomic_art_upgrades = "JCp7WqJMX5qQucBkChrem5JZFjJxN12dmxvJGqNp724C"
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "mainnet"
-wallet = "~/.config/solana/master.json"
+cluster = "localnet"
+wallet = "~/programs/packages/tests/fixtures/id.json"
 
 [scripts]
 createConfig = "yarn run ts-node packages/scripts/createUpgradeConfig.ts"
