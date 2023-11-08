@@ -5,9 +5,9 @@ types = "packages/types"
 seeds = false
 skip-lint = false
 [programs.devnet]
-atomic_art_upgrades = "8EidSNJMiPUWcB8pXLnBG2k6nL4nqWwutPL5To5yY8Hh"
+atomic_art_upgrades = "JCp7WqJMX5qQucBkChrem5JZFjJxN12dmxvJGqNp724C "
 [programs.localnet]
-atomic_art_upgrades = "8EidSNJMiPUWcB8pXLnBG2k6nL4nqWwutPL5To5yY8Hh"
+atomic_art_upgrades = "JCp7WqJMX5qQucBkChrem5JZFjJxN12dmxvJGqNp724C "
 
 [registry]
 url = "https://api.apr.dev"
