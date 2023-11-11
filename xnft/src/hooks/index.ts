@@ -1,4 +1,4 @@
-import { AnchorProvider, Provider } from '@coral-xyz/anchor';
+import { AnchorProvider, Provider } from "@coral-xyz/anchor";
 import { Event, XnftMetadata } from "@coral-xyz/common-public";
 import { Connection, PublicKey } from "@solana/web3.js";
 import { useEffect, useState } from "react";
@@ -10,7 +10,7 @@ declare global {
   }
 }
 
-export function usePublicKeys(): { [key: string]: PublicKey }|undefined {
+export function usePublicKeys(): { [key: string]: PublicKey } | undefined {
   const didLaunch = useDidLaunch();
   const [publicKeys, setPublicKeys] = useState();
   useEffect(() => {
@@ -24,7 +24,7 @@ export function usePublicKeys(): { [key: string]: PublicKey }|undefined {
   return publicKeys;
 }
 
-export function useSolanaConnection(): Connection|undefined {
+export function useSolanaConnection(): Connection | undefined {
   const didLaunch = useDidLaunch();
   const [connection, setConnection] = useState();
   useEffect(() => {
@@ -56,12 +56,12 @@ export function useDidLaunch() {
 
 export const useReady = useDidLaunch;
 
-export function useMetadata(): XnftMetadata|undefined {
-  const didLaunch = useDidLaunch() 
+export function useMetadata(): XnftMetadata | undefined {
+  const didLaunch = useDidLaunch();
   const [metadata, setMetadata] = useState();
 
   useEffect(() => {
-    if(didLaunch) {
+    if (didLaunch) {
       setMetadata(window.xnft.metadata);
       window.xnft.addListener("metadata", (event: Event) => {
         setMetadata(event.data.metadata);
@@ -71,7 +71,7 @@ export function useMetadata(): XnftMetadata|undefined {
   return metadata;
 }
 
-export function useSolanaProvider(): Provider|undefined {
+export function useSolanaProvider(): Provider | undefined {
   const connection = useSolanaConnection();
   const [provider, setProvider] = useState<Provider>();
 
@@ -79,10 +79,10 @@ export function useSolanaProvider(): Provider|undefined {
     if (connection) {
       setProvider(
         new AnchorProvider(
-          connection, 
-          new XnftWallet(window.xnft.solana), 
-          AnchorProvider.defaultOptions()
-        )
+          connection,
+          new XnftWallet(window.xnft.solana),
+          AnchorProvider.defaultOptions(),
+        ),
       );
     }
   }, [connection, setProvider]);

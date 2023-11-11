@@ -9483,6 +9483,11 @@ prelude-ls@~1.1.2:
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
   integrity sha512-ESF23V4SKG6lVSGZgYNpbsiaAkdab6ZgOxe52p7+Kid3W3u3bxR4Vfd/o21dmN7jSt0IwgZ4v5MUd26FEtXE9w==
 
+prettier@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.0.3.tgz#432a51f7ba422d1469096c0fdc28e235db8f9643"
+  integrity sha512-L/4pUDMxcNa8R/EthV08Zt42WBO4h1rarVtK0K+QJG0X187OLo7l699jWw0GKuwzkPQ//jMFA/8Xm6Fh3J/DAg==
+
 pretty-bytes@^5.3.0, pretty-bytes@^5.4.1:
   version "5.6.0"
   resolved "https://registry.yarnpkg.com/pretty-bytes/-/pretty-bytes-5.6.0.tgz#356256f643804773c82f64723fe78c92c62beaeb"
@@ -10056,7 +10061,7 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^3.0.0"
     inherits "^2.0.1"
 
-rogue-sharks-sdk@^1.0.7:
+rogue-sharks-sdk@1.0.7:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/rogue-sharks-sdk/-/rogue-sharks-sdk-1.0.7.tgz#fab4660f189e5cd931c14e6564a708d7ea49ef10"
   integrity sha512-6sPT7JvJTohgD5BKAHPyroFOmNr1CffoB+YyifguwFjMOn9ApWvsvRYoEDBGW+dR0qISgVIM2Mh3SFIZ5lWPkA==

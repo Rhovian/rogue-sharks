@@ -1,3 +1,30 @@
+@font-face {
+  font-family: 'FuturaPTBold';
+  src: url('../public/FuturaPTBold.b22b8109.otf') format('opentype'); 
+}
+
+@font-face {
+  font-family: 'FuturaPTBook';
+  src: url('../public/FuturaPTBook.bc305be0.otf') format('opentype');
+} 
+
+@font-face {
+  font-family: 'FuturaPTDemi';
+  src: url('../public/FuturaPTDemi.2862dbd8.otf') format('opentype');
+}
+
+.bold-text {
+  font-family: 'FuturaPTBold', sans-serif;
+}
+
+.book-text {
+  font-family: 'FuturaPTBook', sans-serif; 
+}
+
+.demi-text {
+  font-family: 'FuturaPTDemi', sans-serif;
+}
+
 .App {
   text-align: center;
 }
@@ -64,6 +91,70 @@
   cursor: pointer;
 }
 
-body {
-  background-color: #343434;
+.text-white {
+  color: white;
+}
+
+.loading-bar {
+  height: 10px;
+  width: 75%;
+  background-color: #ddd;
+  border-radius: 5px;
+  border: 1px solid #36454F;
+}
+
+.progress {
+  height: 100%; 
+  background-color: #2edaff;
+}
+
+
+.mt-5 {
+  margin-top: 5em;
+}
+
+.sharky-dance {
+  width: 100vw;
+  height: 100vh;
+}
+
+.sharky-cta {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  width: 90vw;
+  bottom: 3%;
+}
+
+.sharky-button {
+  padding: 15px;
+  background-color: #ddd;
+  width: 80%;
+  border-radius: 25px;
+  margin-bottom: 1.25em;
+  border: none;
+}
+
+.sharky-button-variant {
+  padding: 15px;
+  background-color: transparent;
+  color: white;
+  width: 80%;
+  border-radius: 25px;
+  margin-bottom: 1.5em;
+  border: 1px solid white;
+}
+
+.right-icon {
+  position: absolute;
+  bottom: 2.5%;
+  right: 7.5%;
+  width: 60px;
+  height: 60px;
+  background-color: transparent; 
+  border: none;
+  cursor: pointer;
 }
