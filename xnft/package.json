@@ -37,7 +37,7 @@
     "test": "react-app-rewired test",
     "eject": "react-scripts eject",
     "bundle": "yarn build && npx xnft bundle",
-    "format": "prettier --write ./src/*.{ts,tsx}"
+    "format": "prettier --write 'src/**/*.{ts,tsx}'"
   },
   "eslintConfig": {
     "extends": [
