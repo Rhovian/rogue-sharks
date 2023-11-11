@@ -8,13 +8,14 @@ import { COLLECTION_MINT } from "./config";
 import FirstPage from "./screens/FirstPage";
 import SecondPage from "./screens/SecondPage";
 import ThirdPage from "./screens/ThirdPage";
+import FourthPage from "./screens/FourthPage";
 import "./App.css";
 
 function App() {
   const { triggerGameOver } = useConsoleInterceptor();
   const location = useLocation();
   const [mint, setMint] = useState<string | null>(null);
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState(3);
 
   const { unityProvider, loadingProgression, isLoaded } = useUnityContext({
     loaderUrl: "build/SharkRun.loader.js",
@@ -71,6 +72,8 @@ function App() {
             loadingProgression={loadingProgression}
           />
         );
+      case 3:
+        return <FourthPage />;
       default:
         return (
           <FirstPage

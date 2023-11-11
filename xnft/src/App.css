@@ -158,3 +158,44 @@
   border: none;
   cursor: pointer;
 }
+
+.final-page {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 90vh;
+}
+
+.img-wrap {
+  margin-bottom: 1em;
+  width: 300px;
+  height: 300px;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+.nav {
+  position: absolute;
+  top: 7.5%;
+  left: 5%;
+  width: 100%;
+  text-align: left !important;
+}
+
+.text-wrap {
+  margin-top: 1.5em;
+  width: 100%;
+  text-align: left;
+  float: left;
+}
+
+.title {
+  font-size: 1.75em;
+  line-height: 25px;
+}
+
+.description {
+  margin-top: 1.25em;
+  font-size: 1em;
+  float: left;
+}
