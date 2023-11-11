@@ -12,7 +12,7 @@ const ThirdPage = () => {
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       <h2 className="flex-center bold-text text-white large mt-5">
-        An interactive art upgrade experience
+        Upgrade in progress
       </h2>
       <div style={{ height: "200px" }}></div>
       <LoadingBar progress={loadingProgression * 100} />
