@@ -3,6 +3,7 @@ import { Location } from "react-router-dom";
 import { AtomicArtUpgradesClient } from "rogue-sharks-sdk";
 import { TOKEN_METADATA_PROGRAM_ID } from "@coral-xyz/xnft";
 import { PublicKey } from "@solana/web3.js";
+import { COLLECTION_MINT } from "../config";
 
 export const extractMint = (location: Location) => {
   const url = location.pathname;
@@ -10,7 +11,7 @@ export const extractMint = (location: Location) => {
   return parts[parts.length - 1];
 };
 
-export const upgrade = async (mint: string, COLLECTION_MINT: PublicKey) => {
+export const upgrade = async (mint: string) => {
   try {
     const provider = new AnchorProvider(
       window.xnft?.solana.connection,

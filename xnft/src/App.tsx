@@ -3,23 +3,22 @@ import { useState, useEffect } from "react";
 import { useUnityContext } from "react-unity-webgl";
 import { useConsoleInterceptor } from "./hooks/consoleOverride";
 import { useLocation } from "react-router-dom";
-import { extractMint, upgrade } from "./utils";
-import { COLLECTION_MINT } from "./config";
+import { extractMint } from "./utils";
 import FirstPage from "./screens/FirstPage";
 import SecondPage from "./screens/SecondPage";
 import ThirdPage from "./screens/ThirdPage";
 import FourthPage from "./screens/FourthPage";
-import "./App.css";
 import { useSolanaConnection } from "./hooks";
-import { Metaplex } from "@metaplex-foundation/js";
+import { JsonMetadata, Metaplex, PublicKey } from "@metaplex-foundation/js";
+import "./App.css";
 
 function App() {
   const { triggerGameOver } = useConsoleInterceptor();
   const location = useLocation();
   const [mint, setMint] = useState<string | null>(null);
   const [page, setPage] = useState(3);
-  const [metaplex, setMetaplex] = useState<any>(null);
-  const [nftMetadata, setNftMetadata] = useState<any>(null);
+  const [metaplex, setMetaplex] = useState<Metaplex | null>(null);
+  const [nftMetadata, setNftMetadata] = useState<JsonMetadata | null>(null);
   const connection = useSolanaConnection();
 
   const { unityProvider, loadingProgression, isLoaded } = useUnityContext({
@@ -43,7 +42,10 @@ function App() {
   useEffect(() => {
     if (!metaplex || !mint) return;
     (async () => {
-      setNftMetadata(await metaplex.nfts().findByMint({ mint }));
+      const nft = await metaplex
+        .nfts()
+        .findByMint({ mintAddress: new PublicKey(mint) });
+      setNftMetadata(nft.json);
     })();
   }, [metaplex, mint]);
 
@@ -62,6 +64,7 @@ function App() {
   };
 
   const goToFourthPage = () => {
+    if (!mint || !metaplex || !nftMetadata) return;
     setPage(3);
   };
 
@@ -85,7 +88,13 @@ function App() {
           />
         );
       case 3:
-        return <FourthPage />;
+        return (
+          <FourthPage
+            metaplex={metaplex!}
+            nftMetadata={nftMetadata!}
+            mint={mint!}
+          />
+        );
       default:
         return (
           <FirstPage
