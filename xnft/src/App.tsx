@@ -10,12 +10,17 @@ import SecondPage from "./screens/SecondPage";
 import ThirdPage from "./screens/ThirdPage";
 import FourthPage from "./screens/FourthPage";
 import "./App.css";
+import { useSolanaConnection } from "./hooks";
+import { Metaplex } from "@metaplex-foundation/js";
 
 function App() {
   const { triggerGameOver } = useConsoleInterceptor();
   const location = useLocation();
   const [mint, setMint] = useState<string | null>(null);
   const [page, setPage] = useState(3);
+  const [metaplex, setMetaplex] = useState<any>(null);
+  const [nftMetadata, setNftMetadata] = useState<any>(null);
+  const connection = useSolanaConnection();
 
   const { unityProvider, loadingProgression, isLoaded } = useUnityContext({
     loaderUrl: "build/SharkRun.loader.js",
@@ -30,27 +35,34 @@ function App() {
   }, [location]);
 
   useEffect(() => {
+    if (connection) {
+      setMetaplex(Metaplex.make(window.xnft.solana.connection._rpcEndpoint));
+    }
+  }, [connection]);
+
+  useEffect(() => {
+    if (!metaplex || !mint) return;
+    (async () => {
+      setNftMetadata(await metaplex.nfts().findByMint({ mint }));
+    })();
+  }, [metaplex, mint]);
+
+  useEffect(() => {
     if (triggerGameOver) {
-      (async () => {
-        if (mint) await upgrade(mint, COLLECTION_MINT);
-      })();
+      goToFourthPage();
     }
   }, [triggerGameOver]);
 
-  const handleQuickUpgrade = async () => {
-    if (!mint) {
-      console.log("no mint found");
-      return;
-    }
-    await upgrade(mint, COLLECTION_MINT);
+  const gotoSecondPage = () => {
+    setPage(1);
   };
 
   const handleStartGame = () => {
     setPage(2);
   };
 
-  const gotoSecondPage = () => {
-    setPage(1);
+  const goToFourthPage = () => {
+    setPage(3);
   };
 
   const renderPage = () => {
@@ -59,7 +71,7 @@ function App() {
         return (
           <FirstPage
             gotoSecondPage={gotoSecondPage}
-            handleQuickUpgrade={handleQuickUpgrade}
+            handleQuickUpgrade={goToFourthPage}
           />
         );
       case 1:
@@ -78,7 +90,7 @@ function App() {
         return (
           <FirstPage
             gotoSecondPage={gotoSecondPage}
-            handleQuickUpgrade={handleQuickUpgrade}
+            handleQuickUpgrade={goToFourthPage}
           />
         );
     }
