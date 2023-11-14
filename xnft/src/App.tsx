@@ -16,7 +16,7 @@ function App() {
   const { triggerGameOver } = useConsoleInterceptor();
   const location = useLocation();
   const [mint, setMint] = useState<string | null>(null);
-  const [page, setPage] = useState(3);
+  const [page, setPage] = useState(0);
   const [metaplex, setMetaplex] = useState<Metaplex | null>(null);
   const [nftMetadata, setNftMetadata] = useState<JsonMetadata | null>(null);
   const connection = useSolanaConnection();
