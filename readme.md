@@ -15,4 +15,6 @@ and an xnft built with React and Web.GL.
 
 ### Program (Art Upgrades)
 
+Mainnet address: 3RuRdvZPVqqTqa7MDqgsDPVUnm8QYdYQc4zZkAXS9HMn
+
 ### SDK (Art Upgrades)

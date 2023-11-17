@@ -1,26 +1,26 @@
 [toolchain]
 anchor_version = "0.29.0"
-solana_version = "1.16.19"    # Solana version to use(applies to all Solana tools)
+solana_version = "1.16.19"
 
 [features]
 seeds = false
 skip-lint = false
 
-[programs.mainnet]
-atomic_art_upgrades = "JCp7WqJMX5qQucBkChrem5JZFjJxN12dmxvJGqNp724C"
-
 [programs.devnet]
-atomic_art_upgrades = "JCp7WqJMX5qQucBkChrem5JZFjJxN12dmxvJGqNp724C"
+atomic_art_upgrades = "3RuRdvZPVqqTqa7MDqgsDPVUnm8QYdYQc4zZkAXS9HMn"
 
 [programs.localnet]
-atomic_art_upgrades = "JCp7WqJMX5qQucBkChrem5JZFjJxN12dmxvJGqNp724C"
+atomic_art_upgrades = "3RuRdvZPVqqTqa7MDqgsDPVUnm8QYdYQc4zZkAXS9HMn"
+
+[programs.mainnet]
+atomic_art_upgrades = "3RuRdvZPVqqTqa7MDqgsDPVUnm8QYdYQc4zZkAXS9HMn"
 
 [registry]
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "localnet"
-wallet = "~/programs/packages/tests/fixtures/id.json"
+cluster = "mainnet"
+wallet = "~/.config/solana/master.json"
 
 [scripts]
 createConfig = "yarn run ts-node packages/scripts/createUpgradeConfig.ts"
