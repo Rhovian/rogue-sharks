@@ -126,6 +126,7 @@ export function useDimensions(debounceMs = 0) {
     return () => {
       window.removeEventListener("resize", debouncedHandleResize);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return dimensions;
