@@ -7,6 +7,7 @@ import { COLLECTION_MINT } from "../config";
 
 export const extractMint = (location: Location) => {
   const hash = location.hash;
+  console.log('hash', hash)
   return hash.slice(2);
 };
 
