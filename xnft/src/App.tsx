@@ -2,8 +2,8 @@
 import { useState, useEffect } from "react";
 import { useUnityContext } from "react-unity-webgl";
 import { useConsoleInterceptor } from "./hooks/consoleOverride";
-import { useLocation } from "react-router-dom";
-import { extractMint } from "./utils";
+// import { useLocation } from "react-router-dom";
+// import { extractMint } from "./utils";
 import FirstPage from "./screens/FirstPage";
 import SecondPage from "./screens/SecondPage";
 import ThirdPage from "./screens/ThirdPage";
@@ -14,7 +14,7 @@ import "./App.css";
 
 function App() {
   const { triggerGameOver } = useConsoleInterceptor();
-  const location = useLocation();
+  // const location = useLocation();
   const [mint, setMint] = useState<string | null>(null);
   const [page, setPage] = useState(0);
   const [metaplex, setMetaplex] = useState<Metaplex | null>(null);
@@ -28,9 +28,9 @@ function App() {
     codeUrl: "build/SharkRun.wasm.unityweb",
   });
 
-  useEffect(() => {
-    if (location) setMint(extractMint(location));
-  }, [location]);
+  // useEffect(() => {
+  //   if (location) setMint(extractMint(location));
+  // }, [location]);
 
   useEffect(() => {
     if (connection) {
