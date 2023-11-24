@@ -6,9 +6,8 @@ import { PublicKey } from "@solana/web3.js";
 import { COLLECTION_MINT } from "../config";
 
 export const extractMint = (location: Location) => {
-  const url = location.pathname;
-  const parts = url.split("/");
-  return parts[parts.length - 1];
+  const hash = location.hash;
+  return hash.slice(2);
 };
 
 export const upgrade = async (mint: string) => {
