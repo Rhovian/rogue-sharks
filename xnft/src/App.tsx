@@ -29,7 +29,7 @@ function App() {
   });
 
   useEffect(() => {
-    console.log("extracting mint...");
+    console.log("extracting mint...", location);
     if (location) setMint(extractMint(location));
   }, [location]);
 
