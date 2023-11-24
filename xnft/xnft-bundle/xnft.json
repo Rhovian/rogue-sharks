@@ -1,13 +1,23 @@
 {
+    "name": "Rogue Sharks Test",
     "version": "0.0.1",
     "storage": "aws",
     "kind": "collectible",
-    "collectibleMint": "FREP9swLijQRyFXyrJTP8AB4ucx1iFP5jr4b3N1zRx52",
-    "tag": "nfts",
+    "description": "Rogue Sharks Test",
+    "website": "https://twitter.com/RogueSharks",
+    "collectibleMint": "3VdqpQ2t9Xy83NKVfebBX9HHDtLFXAphxfuconpFR5g4",
+    "tag": "game",
     "contact":  "github.com/mjavala",
+    "screenshots": [
+      "./web-build/screen-2.png",
+      "./web-build/screen-3.png",
+      "./web-build/screen-1.png",
+      "./web-build/screen-5.png",
+      "./web-build/screen-6.png"
+    ],
     "entrypoints": {
       "default": {
-        "web": "./web-build/index.html"
+        "web": "https://wondrous-eclair-c65eab.netlify.app/"
       }
     }
   }

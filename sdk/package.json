@@ -1,15 +1,18 @@
 {
   "name": "rogue-sharks-sdk",
-  "version": "1.0.8",
+  "version": "1.1.1",
   "description": "SDK for atomic art upgrades for rogue sharks xnft",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --outDir ./dist",
     "create:config": "ts-node createUpgradeConfig.ts"
   },
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@coral-xyz/anchor": "^0.28.1-beta.1",
     "@metaplex-foundation/js": "^0.19.4",

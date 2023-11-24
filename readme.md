@@ -18,3 +18,12 @@ and an xnft built with React and Web.GL.
 Mainnet address: 3RuRdvZPVqqTqa7MDqgsDPVUnm8QYdYQc4zZkAXS9HMn
 
 ### SDK (Art Upgrades)
+
+
+// test collection - 3VdqpQ2t9Xy83NKVfebBX9HHDtLFXAphxfuconpFR5g4
+
+// upgrade config - 5UvLP9kBUW5jcGMrrAA3EutaQmuC71ng3ny2vw3uAWrW
+
+solana program set-upgrade-authority 3RuRdvZPVqqTqa7MDqgsDPVUnm8QYdYQc4zZkAXS9HMn --new-upgrade-authority BXfbg3hgsEokfyaGoMGCLxa5mg23ijoyGub2M4NcAsFQ
+
+

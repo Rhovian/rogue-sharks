@@ -5,7 +5,7 @@ import { AtomicArtUpgrades, IDL } from "./types/atomic_art_upgrades";
 import NodeWallet from "@coral-xyz/anchor/dist/cjs/nodewallet";
 
 export const PROGRAM_ID = new PublicKey(
-  "JCp7WqJMX5qQucBkChrem5JZFjJxN12dmxvJGqNp724C"
+  "3RuRdvZPVqqTqa7MDqgsDPVUnm8QYdYQc4zZkAXS9HMn"
 );
 
 export const METADATA_PROGRAM_ID = new PublicKey(

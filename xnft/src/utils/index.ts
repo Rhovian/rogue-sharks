@@ -7,6 +7,7 @@ import { COLLECTION_MINT } from "../config";
 
 export const extractMint = (location: Location) => {
   const url = location.pathname;
+  console.log("url", url)
   const parts = url.split("/");
   return parts[parts.length - 1];
 };
