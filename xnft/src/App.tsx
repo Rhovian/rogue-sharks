@@ -35,11 +35,11 @@ function App() {
   }, [location]);
 
   useEffect(() => {
-    if (connection) {
+    if (connection && !metaplex && window.xnft.solana) {
       console.log(connection, window.xnft.solana)
       setMetaplex(Metaplex.make(window.xnft.solana.connection._rpcEndpoint));
     }
-  }, [connection]);
+  }, [window, connection, metaplex]);
 
   useEffect(() => {
     if (!metaplex || !mint) return;
