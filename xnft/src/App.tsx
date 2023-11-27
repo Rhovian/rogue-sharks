@@ -81,7 +81,7 @@ function App() {
         return (
           <FirstPage
             gotoSecondPage={gotoSecondPage}
-            handleQuickUpgrade={gotoSecondPage}
+            handleQuickUpgrade={goToFourthPage}
           />
         );
       case 1:
