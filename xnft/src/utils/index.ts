@@ -18,6 +18,7 @@ export const upgrade = async (mint: string) => {
       window.xnft?.solana,
       AnchorProvider.defaultOptions(),
     );
+    console.log("upgrade", mint, getMetadataAddress(mint), COLLECTION_MINT.toBase58())
     await AtomicArtUpgradesClient.upgradeMetadata(
       COLLECTION_MINT,
       new PublicKey(mint),
