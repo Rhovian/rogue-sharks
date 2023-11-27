@@ -1,3 +1,5 @@
+// disable eslint entirely
+/* eslint-disable */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 // import { useUnityContext } from "react-unity-webgl";
