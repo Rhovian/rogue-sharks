@@ -16,7 +16,7 @@ export const useConsoleInterceptor = () => {
     return () => {
       console.log = originalConsoleLog;
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function getBoolean(str: any) {

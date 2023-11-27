@@ -10,7 +10,8 @@ import FirstPage from "./screens/FirstPage";
 import SecondPage from "./screens/SecondPage";
 import ThirdPage from "./screens/ThirdPage";
 import FourthPage from "./screens/FourthPage";
-import { JsonMetadata, Metaplex, PublicKey } from "@metaplex-foundation/js";
+import { JsonMetadata, Metaplex } from "@metaplex-foundation/js";
+import { Connection, PublicKey } from "@solana/web3.js";
 import "./App.css";
 
 function App() {
@@ -34,20 +35,26 @@ function App() {
 
   useEffect(() => {
     if (!metaplex && window && window.xnft) {
-      console.log("setting metaplex", window.xnft.solana.connection._rpcEndpoint)
-      setMetaplex(Metaplex.make(window.xnft.solana.connection._rpcEndpoint));
+      // make solana connection with rpc
+      setMetaplex(
+        Metaplex.make(
+          new Connection(
+            "https://mainnet.helius-rpc.com/?api-key=b39a84bf-57aa-4a30-8449-5e443814611f",
+          ),
+        ),
+      );
     }
   }, [metaplex, window]);
 
-  // useEffect(() => {
-  //   if (!metaplex || !mint) return;
-  //   (async () => {
-  //     const nft = await metaplex
-  //       .nfts()
-  //       .findByMint({ mintAddress: new PublicKey(mint) });
-  //     setNftMetadata(nft.json);
-  //   })();
-  // }, [metaplex, mint]);
+  useEffect(() => {
+    if (!metaplex || !mint) return;
+    (async () => {
+      const nft = await metaplex
+        .nfts()
+        .findByMint({ mintAddress: new PublicKey(mint) });
+      setNftMetadata(nft.json);
+    })();
+  }, [metaplex, mint]);
 
   useEffect(() => {
     if (triggerGameOver) {
