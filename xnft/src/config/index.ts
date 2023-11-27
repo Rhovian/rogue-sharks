@@ -2,5 +2,5 @@ import { PublicKey } from "@solana/web3.js";
 
 // rogue sharks collection mint key
 export const COLLECTION_MINT = new PublicKey(
-  "FREP9swLijQRyFXyrJTP8AB4ucx1iFP5jr4b3N1zRx52",
+  "5UvLP9kBUW5jcGMrrAA3EutaQmuC71ng3ny2vw3uAWrW",
 );
