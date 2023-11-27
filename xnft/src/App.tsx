@@ -4,24 +4,24 @@
 import { useState, useEffect } from "react";
 import { useUnityContext } from "react-unity-webgl";
 import { useConsoleInterceptor } from "./hooks/consoleOverride";
-// import { useLocation } from "react-router-dom";
-// import { extractMint } from "./utils";
+import { useLocation } from "react-router-dom";
+import { extractMint } from "./utils";
 import FirstPage from "./screens/FirstPage";
 import SecondPage from "./screens/SecondPage";
 import ThirdPage from "./screens/ThirdPage";
 import FourthPage from "./screens/FourthPage";
-// import { useSolanaConnection } from "./hooks";
+import { useSolanaConnection } from "./hooks";
 import { JsonMetadata, Metaplex, PublicKey } from "@metaplex-foundation/js";
 import "./App.css";
 
 function App() {
   const { triggerGameOver } = useConsoleInterceptor();
-  // const location = useLocation();
+  const location = useLocation();
   const [mint] = useState<string | null>(null);
   const [page, setPage] = useState(0);
   const [metaplex, setMetaplex] = useState<Metaplex | null>(null);
   const [nftMetadata, setNftMetadata] = useState<JsonMetadata | null>(null);
-  // const connection = useSolanaConnection();
+  const connection = useSolanaConnection();
 
   const { unityProvider, loadingProgression, isLoaded } = useUnityContext({
     loaderUrl: "build/SharkRun.loader.js",
@@ -30,9 +30,9 @@ function App() {
     codeUrl: "build/SharkRun.wasm.unityweb",
   });
 
-  // useEffect(() => {
-  //   if (location) setMint(extractMint(location));
-  // }, [location]);
+  useEffect(() => {
+    if (location) setMint(extractMint(location));
+  }, [location]);
 
   // useEffect(() => {
   //   if (connection) {
@@ -50,11 +50,11 @@ function App() {
   //   })();
   // }, [metaplex, mint]);
 
-  // useEffect(() => {
-  //   if (triggerGameOver) {
-  //     goToFourthPage();
-  //   }
-  // }, [triggerGameOver]);
+  useEffect(() => {
+    if (triggerGameOver) {
+      goToFourthPage();
+    }
+  }, [triggerGameOver]);
 
   const gotoSecondPage = () => {
     setPage(1);
