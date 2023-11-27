@@ -31,8 +31,8 @@ function App() {
   });
 
   useEffect(() => {
-    if (location) setMint(extractMint(location));
-  }, [location]);
+    if (location && !mint) setMint(extractMint(location));
+  }, [location, setMint, mint]);
 
   useEffect(() => {
     if (connection && !metaplex && window.xnft.solana) {
