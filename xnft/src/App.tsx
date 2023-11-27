@@ -10,7 +10,6 @@ import FirstPage from "./screens/FirstPage";
 import SecondPage from "./screens/SecondPage";
 import ThirdPage from "./screens/ThirdPage";
 import FourthPage from "./screens/FourthPage";
-import { useSolanaConnection } from "./hooks";
 import { JsonMetadata, Metaplex, PublicKey } from "@metaplex-foundation/js";
 import "./App.css";
 
@@ -21,7 +20,6 @@ function App() {
   const [page, setPage] = useState(0);
   const [metaplex, setMetaplex] = useState<Metaplex | null>(null);
   const [nftMetadata, setNftMetadata] = useState<JsonMetadata | null>(null);
-  const connection = useSolanaConnection();
 
   const { unityProvider, loadingProgression, isLoaded } = useUnityContext({
     loaderUrl: "build/SharkRun.loader.js",
@@ -34,13 +32,12 @@ function App() {
     if (location && !mint) setMint(extractMint(location));
   }, [location, setMint, mint]);
 
-  // useEffect(() => {
-  //   console.log(connection);
-  //   // if (connection && !metaplex && window && window.xnft) {
-  //   //   console.log(connection, window.xnft)
-  //   //   // setMetaplex(Metaplex.make(window.xnft.solana.connection._rpcEndpoint));
-  //   // }
-  // }, [connection]);
+  useEffect(() => {
+    if (!metaplex && window && window.xnft) {
+      console.log("setting metaplex", window.xnft.solana.connection._rpcEndpoint)
+      setMetaplex(Metaplex.make(window.xnft.solana.connection._rpcEndpoint));
+    }
+  }, [metaplex, window]);
 
   // useEffect(() => {
   //   if (!metaplex || !mint) return;
