@@ -36,10 +36,10 @@ function App() {
 
   useEffect(() => {
     console.log(connection, metaplex, window, window.xnft);
-    if (connection && !metaplex && window && window.xnft) {
-      console.log(connection, window.xnft)
-      // setMetaplex(Metaplex.make(window.xnft.solana.connection._rpcEndpoint));
-    }
+    // if (connection && !metaplex && window && window.xnft) {
+    //   console.log(connection, window.xnft)
+    //   // setMetaplex(Metaplex.make(window.xnft.solana.connection._rpcEndpoint));
+    // }
   }, [connection, metaplex]);
 
   // useEffect(() => {
