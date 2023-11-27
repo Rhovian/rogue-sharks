@@ -21,22 +21,22 @@ function App() {
   const [nftMetadata, setNftMetadata] = useState<JsonMetadata | null>(null);
   const connection = useSolanaConnection();
 
-  const { unityProvider, loadingProgression, isLoaded } = useUnityContext({
-    loaderUrl: "build/SharkRun.loader.js",
-    dataUrl: "build/SharkRun.data.unityweb",
-    frameworkUrl: "build/SharkRun.framework.js.unityweb",
-    codeUrl: "build/SharkRun.wasm.unityweb",
-  });
+  // const { unityProvider, loadingProgression, isLoaded } = useUnityContext({
+  //   loaderUrl: "build/SharkRun.loader.js",
+  //   dataUrl: "build/SharkRun.data.unityweb",
+  //   frameworkUrl: "build/SharkRun.framework.js.unityweb",
+  //   codeUrl: "build/SharkRun.wasm.unityweb",
+  // });
 
   // useEffect(() => {
   //   if (location) setMint(extractMint(location));
   // }, [location]);
 
-  useEffect(() => {
-    if (connection) {
-      setMetaplex(Metaplex.make(window.xnft.solana.connection._rpcEndpoint));
-    }
-  }, [connection]);
+  // useEffect(() => {
+  //   if (connection) {
+  //     setMetaplex(Metaplex.make(window.xnft.solana.connection._rpcEndpoint));
+  //   }
+  // }, [connection]);
 
   useEffect(() => {
     if (!metaplex || !mint) return;
@@ -69,31 +69,6 @@ function App() {
 
   const renderPage = () => {
     switch (page) {
-      case 0:
-        return (
-          <FirstPage
-            gotoSecondPage={gotoSecondPage}
-            handleQuickUpgrade={goToFourthPage}
-          />
-        );
-      case 1:
-        return <SecondPage handleStartGame={handleStartGame} />;
-      case 2:
-        return (
-          <ThirdPage
-            unityProvider={unityProvider}
-            isLoaded={isLoaded}
-            loadingProgression={loadingProgression}
-          />
-        );
-      case 3:
-        return (
-          <FourthPage
-            metaplex={metaplex!}
-            nftMetadata={nftMetadata!}
-            mint={mint!}
-          />
-        );
       default:
         return (
           <FirstPage
@@ -101,6 +76,31 @@ function App() {
             handleQuickUpgrade={goToFourthPage}
           />
         );
+      // case 1:
+      //   return <SecondPage handleStartGame={handleStartGame} />;
+      // case 2:
+      //   return (
+      //     <ThirdPage
+      //       unityProvider={unityProvider}
+      //       isLoaded={isLoaded}
+      //       loadingProgression={loadingProgression}
+      //     />
+      //   );
+      // case 3:
+      //   return (
+      //     <FourthPage
+      //       metaplex={metaplex!}
+      //       nftMetadata={nftMetadata!}
+      //       mint={mint!}
+      //     />
+      //   );
+      // default:
+      //   return (
+      //     <FirstPage
+      //       gotoSecondPage={gotoSecondPage}
+      //       handleQuickUpgrade={goToFourthPage}
+      //     />
+      //   );
     }
   };
 
