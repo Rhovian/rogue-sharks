@@ -34,12 +34,12 @@ function App() {
     if (location && !mint) setMint(extractMint(location));
   }, [location, setMint, mint]);
 
-  useEffect(() => {
-    if (connection && !metaplex && window.xnft.solana) {
-      console.log(connection, window.xnft.solana)
-      setMetaplex(Metaplex.make(window.xnft.solana.connection._rpcEndpoint));
-    }
-  }, [window, connection, metaplex]);
+  // useEffect(() => {
+  //   if (connection && !metaplex && window.xnft.solana) {
+  //     console.log(connection, window.xnft.solana)
+  //     setMetaplex(Metaplex.make(window.xnft.solana.connection._rpcEndpoint));
+  //   }
+  // }, [window, connection, metaplex]);
 
   // useEffect(() => {
   //   if (!metaplex || !mint) return;
