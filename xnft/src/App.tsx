@@ -48,11 +48,11 @@ function App() {
   //   })();
   // }, [metaplex, mint]);
 
-  useEffect(() => {
-    if (triggerGameOver) {
-      goToFourthPage();
-    }
-  }, [triggerGameOver]);
+  // useEffect(() => {
+  //   if (triggerGameOver) {
+  //     goToFourthPage();
+  //   }
+  // }, [triggerGameOver]);
 
   const gotoSecondPage = () => {
     setPage(1);
