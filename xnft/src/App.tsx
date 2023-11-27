@@ -34,21 +34,22 @@ function App() {
     if (location) setMint(extractMint(location));
   }, [location]);
 
-  // useEffect(() => {
-  //   if (connection) {
-  //     setMetaplex(Metaplex.make(window.xnft.solana.connection._rpcEndpoint));
-  //   }
-  // }, [connection]);
+  useEffect(() => {
+    if (connection) {
+      console.log(connection, window.xnft.solana)
+      setMetaplex(Metaplex.make(window.xnft.solana.connection._rpcEndpoint));
+    }
+  }, [connection]);
 
-  // useEffect(() => {
-  //   if (!metaplex || !mint) return;
-  //   (async () => {
-  //     const nft = await metaplex
-  //       .nfts()
-  //       .findByMint({ mintAddress: new PublicKey(mint) });
-  //     setNftMetadata(nft.json);
-  //   })();
-  // }, [metaplex, mint]);
+  useEffect(() => {
+    if (!metaplex || !mint) return;
+    (async () => {
+      const nft = await metaplex
+        .nfts()
+        .findByMint({ mintAddress: new PublicKey(mint) });
+      setNftMetadata(nft.json);
+    })();
+  }, [metaplex, mint]);
 
   useEffect(() => {
     if (triggerGameOver) {
