@@ -35,12 +35,12 @@ function App() {
   }, [location, setMint, mint]);
 
   useEffect(() => {
-    console.log(connection, metaplex, window, window.xnft);
+    console.log(connection);
     // if (connection && !metaplex && window && window.xnft) {
     //   console.log(connection, window.xnft)
     //   // setMetaplex(Metaplex.make(window.xnft.solana.connection._rpcEndpoint));
     // }
-  }, [connection, metaplex]);
+  }, [connection]);
 
   // useEffect(() => {
   //   if (!metaplex || !mint) return;
