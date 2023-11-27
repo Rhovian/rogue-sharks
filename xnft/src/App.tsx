@@ -1,14 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
-import { useUnityContext } from "react-unity-webgl";
+// import { useUnityContext } from "react-unity-webgl";
 import { useConsoleInterceptor } from "./hooks/consoleOverride";
 // import { useLocation } from "react-router-dom";
 // import { extractMint } from "./utils";
 import FirstPage from "./screens/FirstPage";
-import SecondPage from "./screens/SecondPage";
-import ThirdPage from "./screens/ThirdPage";
-import FourthPage from "./screens/FourthPage";
-import { useSolanaConnection } from "./hooks";
+// import SecondPage from "./screens/SecondPage";
+// import ThirdPage from "./screens/ThirdPage";
+// import FourthPage from "./screens/FourthPage";
+// import { useSolanaConnection } from "./hooks";
 import { JsonMetadata, Metaplex, PublicKey } from "@metaplex-foundation/js";
 import "./App.css";
 
@@ -17,9 +17,9 @@ function App() {
   // const location = useLocation();
   const [mint] = useState<string | null>(null);
   const [page, setPage] = useState(0);
-  const [metaplex, setMetaplex] = useState<Metaplex | null>(null);
+  // const [metaplex, setMetaplex] = useState<Metaplex | null>(null);
   const [nftMetadata, setNftMetadata] = useState<JsonMetadata | null>(null);
-  const connection = useSolanaConnection();
+  // const connection = useSolanaConnection();
 
   // const { unityProvider, loadingProgression, isLoaded } = useUnityContext({
   //   loaderUrl: "build/SharkRun.loader.js",
@@ -38,15 +38,15 @@ function App() {
   //   }
   // }, [connection]);
 
-  useEffect(() => {
-    if (!metaplex || !mint) return;
-    (async () => {
-      const nft = await metaplex
-        .nfts()
-        .findByMint({ mintAddress: new PublicKey(mint) });
-      setNftMetadata(nft.json);
-    })();
-  }, [metaplex, mint]);
+  // useEffect(() => {
+  //   if (!metaplex || !mint) return;
+  //   (async () => {
+  //     const nft = await metaplex
+  //       .nfts()
+  //       .findByMint({ mintAddress: new PublicKey(mint) });
+  //     setNftMetadata(nft.json);
+  //   })();
+  // }, [metaplex, mint]);
 
   useEffect(() => {
     if (triggerGameOver) {
@@ -62,10 +62,10 @@ function App() {
     setPage(2);
   };
 
-  const goToFourthPage = () => {
-    if (!mint || !metaplex || !nftMetadata) return;
-    setPage(3);
-  };
+  // const goToFourthPage = () => {
+  //   if (!mint || !metaplex || !nftMetadata) return;
+  //   setPage(3);
+  // };
 
   const renderPage = () => {
     switch (page) {
@@ -73,7 +73,7 @@ function App() {
         return (
           <FirstPage
             gotoSecondPage={gotoSecondPage}
-            handleQuickUpgrade={goToFourthPage}
+            handleQuickUpgrade={gotoSecondPage}
           />
         );
       // case 1:
