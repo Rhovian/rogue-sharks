@@ -55,7 +55,7 @@ const FourthPage = ({ metaplex, nftMetadata, mint }: FourthPageProps) => {
 
   return (
     <>
-      {isLoaded && (
+      {!isLoaded && (
         <div
           className="App full-screen flex-center flex-col"
           style={{ backgroundImage: `url(${bgImage})` }}
@@ -67,7 +67,7 @@ const FourthPage = ({ metaplex, nftMetadata, mint }: FourthPageProps) => {
           <LoadingBar progress={loadingProgression * 100} />
         </div>
       )}
-      {!isLoaded && (
+      {isLoaded && (
         <div className="App full-screen flex-col final-page">
           <div className="nav demi-text text-left">upgrade complete</div>
           <div className="img-wrap">
