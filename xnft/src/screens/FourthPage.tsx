@@ -45,6 +45,7 @@ const FourthPage = ({ metaplex, nftMetadata, mint }: FourthPageProps) => {
       const updatedMetadata = await metaplex
         .nfts()
         .findByMint({ mintAddress: new PublicKey(mint) });
+        setLoadingProgression(75);
       if (metadata?.uri !== updatedMetadata?.uri) {
         setMetadata(updatedMetadata.json);
         setImage(updatedMetadata?.json?.image || null);
