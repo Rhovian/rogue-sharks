@@ -27,9 +27,9 @@ const FourthPage = ({ metaplex, nftMetadata, mint }: FourthPageProps) => {
   useEffect(() => {
     (async () => {
       await upgrade(mint);
+      setLoadingProgression(25);
+      setHasUpgraded(true);
     })();
-    setLoadingProgression(25);
-    setHasUpgraded(true);
   }, [mint]);
 
   // create a function to poll for nft metadata changes
