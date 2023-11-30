@@ -54,7 +54,7 @@ const FourthPage = ({ metaplex, nftMetadata, mint }: FourthPageProps) => {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [metaplex, mint, metadata]);
+  }, [metaplex, mint, metadata, hasUpgraded]);
 
   return (
     <>
