@@ -18,6 +18,7 @@ const FourthPage = ({ metaplex, nftMetadata, mint }: FourthPageProps) => {
     nftMetadata,
   );
   const [image, setImage] = React.useState<string | null>(null);
+  const [hasUpgraded, setHasUpgraded] = React.useState(false);
 
   useEffect(() => {
     if (metadata && metadata.json) setImage(metadata.image || null);
@@ -28,6 +29,7 @@ const FourthPage = ({ metaplex, nftMetadata, mint }: FourthPageProps) => {
       await upgrade(mint);
     })();
     setLoadingProgression(25);
+    setHasUpgraded(true);
   }, [mint]);
 
   // create a function to poll for nft metadata changes
@@ -36,6 +38,7 @@ const FourthPage = ({ metaplex, nftMetadata, mint }: FourthPageProps) => {
   // recover the image from the metadata and set it to the image state
   // Poll for metadata changes every 5 seconds
   useEffect(() => {
+    if (!hasUpgraded) return;
     const interval = setInterval(async () => {
       if (!metaplex || !mint || !metadata) return;
 
