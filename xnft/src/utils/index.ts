@@ -13,7 +13,6 @@ export const extractMint = (location: Location) => {
 
 export const upgrade = async (mint: string) => {
   try {
-    console.log(window.xnft.solana)
     const provider = new AnchorProvider(
       window.xnft?.solana.connection,
       window.xnft?.solana,

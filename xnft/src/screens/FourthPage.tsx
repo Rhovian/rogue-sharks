@@ -37,7 +37,7 @@ const FourthPage = ({ metaplex, nftMetadata, mint }: FourthPageProps) => {
   // Poll for metadata changes every 5 seconds
   useEffect(() => {
     const interval = setInterval(async () => {
-      if (!metaplex || !mint) return;
+      if (!metaplex || !mint || !metadata) return;
 
       const updatedMetadata = await metaplex
         .nfts()
@@ -74,6 +74,7 @@ const FourthPage = ({ metaplex, nftMetadata, mint }: FourthPageProps) => {
             {image ? (
               <img
                 src={image}
+                className="shark-img"
                 alt="rogue sharks nft"
                 height={300}
                 width={300}
@@ -81,6 +82,7 @@ const FourthPage = ({ metaplex, nftMetadata, mint }: FourthPageProps) => {
             ) : (
               <img
                 src={placeholderShark}
+                className="shark-img"
                 alt="rogue sharks nft"
                 height={300}
                 width={300}

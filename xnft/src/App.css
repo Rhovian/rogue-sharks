@@ -200,3 +200,7 @@
   font-size: 1em;
   float: left;
 }
+
+.shark-img {
+  border-radius: 12.5px;
+}
