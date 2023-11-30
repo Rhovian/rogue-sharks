@@ -26,9 +26,9 @@ const FourthPage = ({ metaplex, nftMetadata, mint }: FourthPageProps) => {
 
   useEffect(() => {
     (async () => {
-      await upgrade(mint);
       setLoadingProgression(25);
-      setHasUpgraded(true);
+      const upgraded = await upgrade(mint);
+      if (upgraded) setHasUpgraded(true);
     })();
   }, [mint]);
 
@@ -46,8 +46,8 @@ const FourthPage = ({ metaplex, nftMetadata, mint }: FourthPageProps) => {
         .nfts()
         .findByMint({ mintAddress: new PublicKey(mint) });
         setLoadingProgression(75);
-      if (metadata?.image !== updatedMetadata?.uri && hasUpgraded) {
-        console.log("metadata updated", updatedMetadata.uri, metadata.image)
+        console.log("metadata updated", updatedMetadata?.json?.image, metadata.image)
+      if (metadata?.image !== updatedMetadata?.json?.image && hasUpgraded) {
         setMetadata(updatedMetadata.json);
         setImage(updatedMetadata?.json?.image || null);
         setLoadingProgression(100);

@@ -72,7 +72,6 @@ function App() {
 
   const goToFourthPage = () => {
     if (!mint || !metaplex || !nftMetadata) return;
-    console.log("go to fourth page", mint, metaplex, nftMetadata);
     setPage(3);
   };
 

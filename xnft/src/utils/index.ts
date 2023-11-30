@@ -24,8 +24,10 @@ export const upgrade = async (mint: string) => {
       getMetadataAddress(mint)!,
       provider,
     );
+    return true
   } catch (err) {
     console.log("upgrade error", err);
+    return false
   }
 };
 
