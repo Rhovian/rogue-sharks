@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 interface LoadingBarProps {
   progress: number;
@@ -6,10 +6,7 @@ interface LoadingBarProps {
 }
 
 const LoadingBar = ({ progress, isFourthPage }: LoadingBarProps) => {
-  useEffect(() => {
-    console.log(progress)
-  }, [progress]);
-  
+
   return (
     <div className="loading-bar">
       <div className="progress" style={{ width: `${progress}%` }}></div>

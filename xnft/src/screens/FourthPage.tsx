@@ -69,7 +69,7 @@ const FourthPage = ({ metaplex, nftMetadata, mint }: FourthPageProps) => {
             Upgrade in progress
           </h2>
           <div style={{ height: "200px" }}></div>
-          <LoadingBar progress={loadingProgression * 100} />
+          <LoadingBar progress={loadingProgression * 100} isFourthPage/>
         </div>
       )}
       {isLoaded && (
