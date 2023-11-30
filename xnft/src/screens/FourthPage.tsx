@@ -27,8 +27,8 @@ const FourthPage = ({ metaplex, nftMetadata, mint }: FourthPageProps) => {
   useEffect(() => {
     (async () => {
       setLoadingProgression(25);
-      const upgraded = await upgrade(mint);
-      if (upgraded) setHasUpgraded(true);
+      await upgrade(mint);
+      setHasUpgraded(true);
     })();
   }, [mint]);
 

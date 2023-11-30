@@ -2,7 +2,7 @@ import { AnchorProvider } from "@coral-xyz/anchor";
 import { Location } from "react-router-dom";
 import { AtomicArtUpgradesClient } from "rogue-sharks-sdk";
 import { TOKEN_METADATA_PROGRAM_ID } from "@coral-xyz/xnft";
-import { PublicKey } from "@solana/web3.js";
+import { Connection, PublicKey } from "@solana/web3.js";
 import { COLLECTION_MINT } from "../config";
 
 export const extractMint = (location: Location) => {
@@ -14,7 +14,7 @@ export const extractMint = (location: Location) => {
 export const upgrade = async (mint: string) => {
   try {
     const provider = new AnchorProvider(
-      window.xnft?.solana.connection,
+      new Connection("https://mainnet.helius-rpc.com/?api-key=b39a84bf-57aa-4a30-8449-5e443814611f"),
       window.xnft?.solana,
       AnchorProvider.defaultOptions(),
     );
