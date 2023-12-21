@@ -14,7 +14,7 @@ export const extractMint = (location: Location) => {
 export const upgrade = async (mint: string) => {
   try {
     const provider = new AnchorProvider(
-      new Connection("https://mainnet.helius-rpc.com/?api-key=b39a84bf-57aa-4a30-8449-5e443814611f"),
+      new Connection("https://rpc.hellomoon.io/46bbb0c8-53a8-4a98-808b-303f924f2dc9"),
       window.xnft?.solana,
       AnchorProvider.defaultOptions(),
     );

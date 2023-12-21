@@ -39,7 +39,7 @@ function App() {
       setMetaplex(
         Metaplex.make(
           new Connection(
-            "https://mainnet.helius-rpc.com/?api-key=b39a84bf-57aa-4a30-8449-5e443814611f",
+            "https://rpc.hellomoon.io/46bbb0c8-53a8-4a98-808b-303f924f2dc9",
           ),
         ),
       );
